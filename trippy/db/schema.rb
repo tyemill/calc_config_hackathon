@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 20170711022234) do
   end
 
   create_table "hospitalities", force: :cascade do |t|
-    t.string   "type"
     t.string   "name"
     t.string   "address"
     t.string   "city"
