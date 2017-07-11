@@ -94,18 +94,6 @@ Hospitality.create!([
     {name: "Sheraton Seattle Hotel", address: "5000 25th Ave", city: "Seattle", country: "USA", cost: 255},
     {name: "Loews Hotel 1000", address: "5000 25th Ave", city: "Seattle", country: "USA", cost: 255},
     {name: "Crown Plaza Seattle", address: "5000 25th Ave", city: "Seattle", country: "USA", cost: 269},
-    {name: "Georgetown Inn", address: "5000 25th Ave", city: "Seattle", country: "USA", cost: 120},
-    {name: "Courtyard", address: "5000 25th Ave", city: "Seattle", country: "USA", cost: 160},
-    {name: "Best Western Plus Hotel", address: "5000 25th Ave", city: "Seattle", country: "USA", cost: 120},
-    {name: "Best Western Executive Inn", address: "5000 25th Ave", city: "Seattle", country: "USA", cost: 100},
-    {name: "Paramount Hotel", address: "5000 25th Ave", city: "Seattle", country: "USA", cost: 180},
-    {name: "Inn Market Seattle", address: "5000 25th Ave", city: "Seattle", country: "USA", cost: 160},
-    {name: "Mediterranean Inn", address: "5000 25th Ave", city: "Seattle", country: "USA", cost: 10},
-    {name: "Marriot Hotel", address: "5000 25th Ave", city: "Seattle", country: "USA", cost: 110},
-    {name: "Stayover Hotel", address: "5000 25th Ave", city: "Seattle", country: "USA", cost: 90},
-    {name: "Grand Seattle Hotel", address: "5000 25th Ave", city: "Seattle", country: "USA", cost: 60},
-    {name: "Space Needle  Hotel", address: "5000 25th Ave", city: "Seattle", country: "USA", cost: 70},
-    {name: "Heart Hotel", address: "5000 25th Ave", city: "Seattle", country: "USA", cost: 70},
     ])
 end
 
