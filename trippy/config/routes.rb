@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resource :trips, only[:new, :show]
+  resource :trips, only:[:new, :show]
   get 'welcome/index'
   #resource :articles
   root 'welcome#index'
