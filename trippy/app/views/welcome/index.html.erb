@@ -1,15 +1,29 @@
+<h1>New Article</h1>
+<%= link_to image_tag("seattle.jpg", alt: "Rails logo") %>
+
 <%= form_for :article do |f| %>
   <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.label :From %><br>
+    <%= f.text_field :From %>
   </p>
 
   <p>
-    <%= f.label :text %><br>
-    <%= f.text_area :text %>
+    <%= f.label :Destination %><br>
+    <!-- <%= f.text_field :Destination %> -->
+    <%= f.text_field :Destination, :value => "Seattle"%>
   </p>
 
   <p>
-    <%= f.submit %>
+    <%= f.label :Budget %><br>
+    <%= f.text_field :Budget %>
+  </p>
+
+  <p>
+    <%= f.label :Duration %><br>
+    <%= f.text_field :Duration %>
+  </p>
+
+  <p>
+    <%= f.submit :Submit %>
   </p>
 <% end %>
