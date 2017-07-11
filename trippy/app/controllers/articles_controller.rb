@@ -1,4 +1,11 @@
 class ArticlesController < ApplicationController
-  def new
+  def show
+    puts "hellllllloo"
   end
+
+  def search
+    #Hospitality.find(:city.eql?("Seattle"))
+    puts "whattttt"
+  end
+
 end

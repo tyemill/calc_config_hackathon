@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
+  resource :trips, only[:new, :show]
   get 'welcome/index'
-  resource :articles
+  #resource :articles
   root 'welcome#index'
+  get 'articles/search'
+  
+  # article.show "display", :controller => "articles"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
