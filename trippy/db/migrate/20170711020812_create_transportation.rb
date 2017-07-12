@@ -3,7 +3,7 @@ class CreateTransportation < ActiveRecord::Migration
     create_table :transportations do |t|
       t.string :mode
       t.string :start
-      t.string :end
+      t.string :dest
       t.integer :duration
       t.integer :cost
 
