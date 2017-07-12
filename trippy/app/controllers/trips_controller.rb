@@ -22,7 +22,7 @@ class TripsController < ApplicationController
     end
     set_hospitality(amount, dest)
     unless @hospilatity_cheap.nil? || @hospitality_cheap[0].nil? 
-      amount = amount - @hospitality_cheap[0].cos
+      amount = amount - @hospitality_cheap[0].cost
     end
     set_activities_cheap(amount, dest)
   end 
