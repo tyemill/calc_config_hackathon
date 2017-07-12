@@ -1,19 +1,8 @@
-<h1>Show me the money</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-  </tr>
-  <%= @transportation.each do |t| %>
-    <tr>
-      <td><%= t.mode %></td>
-    </tr>
-  <% end %>
-</table>
 
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
+    <h1>Your trip</h1>
 <style>
 table, th, td {
     border: 1px solid black;
@@ -21,6 +10,7 @@ table, th, td {
 </style>
 </head>
 <body>
+  <title>Cheap Trip</title>
 <table>
   <tr>
     <th>Mode</th>
@@ -28,7 +18,7 @@ table, th, td {
     <th>Destination</th>
     <th>Cost</th>
   </tr>
-  <% @transportation.each do |t| %>
+  <% @transportation_cheap.each do |t| %>
     <tr>
       <td><%= t.mode %></td>
       <td><%= t.start %></td>
@@ -43,13 +33,65 @@ table, th, td {
     <th>Address</th>
     <th>City</th>
     <th>Country</th>
+    <th>Cost</th>
   </tr>
-  <% @hospitality.each do |hotel| %>
+  <% @hospitality_cheap.each do |hotel| %>
     <tr>
       <td><%= hotel.name %></td>
       <td><%= hotel.address %></td>
       <td><%= hotel.city %></td>
       <td><%= hotel.country %></td>
+      <td><%= hotel.cost %></td>
+    </tr>
+  <% end %>
+</table>
+  <title>Great Trip</title>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Duration</th>
+		<th>Cost</th>
+  </tr>
+  <% @activities_cheap.each do |act| %>
+    <tr>
+      <td><%= act.activity_name %></td>
+      <td><%= act.duration %></td>
+      <td><%= act.cost %></td>
+    </tr>
+  <% end %>
+</table>
+<table>
+  <tr>
+    <th>Mode</th>
+    <th>Start</th>
+    <th>Destination</th>
+    <th>Cost</th>
+  </tr>
+  <% @transportation_high.each do |t| %>
+    <tr>
+      <td><%= t.mode %></td>
+      <td><%= t.start %></td>
+      <td><%= t.dest %></td>
+      <td><%= t.cost %></td>
+    </tr>
+  <% end %>
+</table>
+  <title>Affordable Trip</title>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>Country</th>
+    <th>Cost</th>
+  </tr>
+  <% @hospitality_high.each do |hotel| %>
+    <tr>
+      <td><%= hotel.name %></td>
+      <td><%= hotel.address %></td>
+      <td><%= hotel.city %></td>
+      <td><%= hotel.country %></td>
+      <td><%= hotel.cost %></td>
     </tr>
   <% end %>
 </table>
@@ -59,9 +101,57 @@ table, th, td {
     <th>Duration</th>
 		<th>Cost</th>
   </tr>
-  <% @activities.each do |act| %>
+  <% @activities_high.each do |act| %>
     <tr>
-      <td><%= act.name %></td>
+      <td><%= act.activity_name %></td>
+      <td><%= act.duration %></td>
+      <td><%= act.cost %></td>
+    </tr>
+  <% end %>
+</table>
+<table>
+  <tr>
+    <th>Mode</th>
+    <th>Start</th>
+    <th>Destination</th>
+    <th>Cost</th>
+  </tr>
+  <% @transportation_rand.each do |t| %>
+    <tr>
+      <td><%= t.mode %></td>
+      <td><%= t.start %></td>
+      <td><%= t.dest %></td>
+      <td><%= t.cost %></td>
+    </tr>
+  <% end %>
+</table>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>Country</th>
+    <th>Cost</th>
+  </tr>
+  <% @hospitality_rand.each do |hotel| %>
+    <tr>
+      <td><%= hotel.name %></td>
+      <td><%= hotel.address %></td>
+      <td><%= hotel.city %></td>
+      <td><%= hotel.country %></td>
+      <td><%= hotel.cost %></td>
+    </tr>
+  <% end %>
+</table>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Duration</th>
+		<th>Cost</th>
+  </tr>
+  <% @activities_rand.each do |act| %>
+    <tr>
+      <td><%= act.activity_name %></td>
       <td><%= act.duration %></td>
       <td><%= act.cost %></td>
     </tr>

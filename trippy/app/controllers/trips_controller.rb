@@ -3,25 +3,80 @@ class TripsController < ApplicationController
   end
 
   def show
-    amount = params[:budget].to_i / 3
-    dest = params[:start]
-
-    set_transportation(amount, dest)
-    set_hospitality(amount, dest)
-    set_activities(amount, dest)
+    amount = params[:budget].to_i
+    dest = params[:city]
+    
+    set_cheap(amount, dest)
+    amount = params[:budget].to_i
+    set_expensive(amount, dest)
+    amount = params[:budget].to_i
+    set_random(amount, dest)
   end
 
-  private 
+  private
+
+  def set_cheap(amount, dest)
+    set_transportation(amount, dest)
+    set_hospitality(amount, dest)
+    set_activities_cheap(amount, dest)
+  end 
+
+  def set_expensive(amount, dest)
+    set_transportation_high(amount, dest)
+    set_hospitality_high(amount, dest)
+    set_activities_high(amount, dest)
+  end 
+  
+  def set_random(amount, dest)
+    set_transportation_rand(amount, dest)
+    set_hospitality_rand(amount, dest)
+    set_activities(amount, dest)
+  end 
+
 
   def set_transportation(amount, dest)
-    @transportation = Transportation.where("cost <= '%s' and start = '%s'" , amount, dest)
+    @transportation_cheap = Transportation.limit(1).order("cost").where("cost <= '%s' and dest = '%s'" , amount, dest)
+    amount = amount - @transportation_cheap[0].cost
   end
   
   def set_hospitality(amount, dest)
-    @hospitality = Hospitality.where("cost <= '%s' and city = '%s'" , amount, dest)
+    daily_cost = amount / params[:duration].to_i
+    @hospitality_cheap = Hospitality.limit(1).order("cost").where("cost <= '%s' and city = '%s'" , daily_cost, dest)
+    amount = amount - @hospitality_cheap[0].cost
+  end
+  
+  def set_activities_cheap(amount, dest)
+    @activities_cheap = Activities.limit(2 * params[:duration].to_i).order("cost").where("cost <= '%s' and city = '%s'", amount, dest)
+  end
+  
+  def set_transportation_high(amount, dest)
+    @transportation_high = Transportation.limit(1).order("cost DESC").where("cost <= '%s' and dest = '%s'" , amount, dest)
+    amount = amount - @transportation_high[0].cost
+  end
+  
+  def set_hospitality_high(amount, dest)
+    daily_cost = amount / params[:duration].to_i
+    @hospitality_high = Hospitality.limit(1).order("cost DESC").where("cost <= '%s' and city = '%s'" , daily_cost, dest)
+    amount = amount - @hospitality_high[0].cost
+  end
+  
+  def set_activities_high(amount, dest)
+    @activities_high = Activities.limit(2 * params[:duration].to_i).order("cost DESC").where("cost <= '%s' and city = '%s'", amount, dest)
+  end
+
+  def set_transportation_rand(amount, dest)
+    @transportation_rand = Transportation.limit(1).where("cost <= '%s' and dest = '%s'" , amount, dest)
+    amount = amount - @transportation_rand[0].cost
+  end
+  
+  def set_hospitality_rand(amount, dest)
+    daily_cost = amount / params[:duration].to_i
+    @hospitality_rand = Hospitality.limit(1).where("cost <= '%s' and city = '%s'" , daily_cost, dest)
+    amount = amount - @hospitality_rand[0].cost
   end
   
   def set_activities(amount, dest)
-    @activities = Activities.where("cost <= '%s' and city = '%s'", amount, dest)
+    @activities_rand = Activities.limit(2 * params[:duration].to_i).where("cost <= '%s' and city = '%s'", amount, dest)
   end
+  
 end
