@@ -1,2 +1,12 @@
-<h1>Trips#show</h1>
-<p>Find me in app/views/trips/show.html.erb</p>
+<h1>Show me the money</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+  <%= @transportation.each do |t| %>
+    <tr>
+      <td><%= t.mode %></td>
+    </tr>
+  <% end %>
+</table>
