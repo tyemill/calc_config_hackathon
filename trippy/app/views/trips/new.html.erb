@@ -1,6 +1,8 @@
-<div align="center">
-  <h1>Trippy</h1>
-</div>
+<header>
+  <div align="center">
+    <h1>Trippy</h1>
+  </div>
+</header>
 
 <body>
   <div id="main-container" class="container-fluid" align="center">
@@ -14,27 +16,34 @@
             <%= label_tag("From") %>
             <%= text_field_tag(:start) %>
           </div>
+      </div>
 
+      <div class="row">
         <div class="col-xs-12">
           <%= label_tag("Destination") %>
           <%= text_field_tag(:city) %>
         </div>
+      </div>
 
+      <div class="row">
         <div class="col-xs-12">
           <%= label_tag("Budget") %>
           <%= text_field_tag(:budget) %>
         </div>
+      </div>
 
+      <div class="row">
         <div class="col-xs-12">
           <%= label_tag("Duration") %>
           <%= text_field_tag(:duration) %>
         </div>
+        <div class="row">
 
+      <div class="row">
         <div class="col-xs-12">
           <%= button_tag "Submit" %>
           <% end %>
         </div>
-
       </div>
 
     </div>

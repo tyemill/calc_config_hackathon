@@ -10,7 +10,7 @@ table, th, td {
 </style>
 </head>
 <body>
-  <title>Cheap Trip</title>
+  <h3>Cheap Trip</h3>
 <table>
   <tr>
     <th>Mode</th>
@@ -27,6 +27,7 @@ table, th, td {
     </tr>
   <% end %>
 </table>
+<br>
 <table>
   <tr>
     <th>Name</th>
@@ -45,7 +46,7 @@ table, th, td {
     </tr>
   <% end %>
 </table>
-  <title>Great Trip</title>
+  <br>
 <table>
   <tr>
     <th>Name</th>
@@ -60,6 +61,8 @@ table, th, td {
     </tr>
   <% end %>
 </table>
+<br>
+<h3>Luxury Trip</h3>
 <table>
   <tr>
     <th>Mode</th>
@@ -76,7 +79,6 @@ table, th, td {
     </tr>
   <% end %>
 </table>
-  <title>Affordable Trip</title>
 <table>
   <tr>
     <th>Name</th>
@@ -85,6 +87,7 @@ table, th, td {
     <th>Country</th>
     <th>Cost</th>
   </tr>
+  <br>
   <% @hospitality_high.each do |hotel| %>
     <tr>
       <td><%= hotel.name %></td>
@@ -101,6 +104,7 @@ table, th, td {
     <th>Duration</th>
 		<th>Cost</th>
   </tr>
+  <br>
   <% @activities_high.each do |act| %>
     <tr>
       <td><%= act.activity_name %></td>
@@ -109,6 +113,8 @@ table, th, td {
     </tr>
   <% end %>
 </table>
+<br>
+<h3> Affordable Trip</h3>
 <table>
   <tr>
     <th>Mode</th>
@@ -125,6 +131,7 @@ table, th, td {
     </tr>
   <% end %>
 </table>
+<br>
 <table>
   <tr>
     <th>Name</th>
@@ -143,6 +150,7 @@ table, th, td {
     </tr>
   <% end %>
 </table>
+<br>
 <table>
   <tr>
     <th>Name</th>
@@ -157,5 +165,6 @@ table, th, td {
     </tr>
   <% end %>
 </table>
+<br>
 </body>
 </html>
