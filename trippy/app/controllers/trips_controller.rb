@@ -4,25 +4,24 @@ class TripsController < ApplicationController
 
   def show
     amount = params[:budget].to_i / 3
-    dest = params[:city]
+    dest = params[:start]
 
     set_transportation(amount, dest)
-    set_hospitality(amount)
-    set_activities(amount)
-
+    set_hospitality(amount, dest)
+    set_activities(amount, dest)
   end
 
   private 
 
   def set_transportation(amount, dest)
-    @transportation = Transportation.where(["cost <= :cost and end = :end", { cost: amount, end: dest }])
+    @transportation = Transportation.where("cost <= '%s' and start = '%s'" , amount, dest)
   end
   
-  def set_hospitality(amount)
-    @hospitality = Transportation.where("cost <= ?", amount)
+  def set_hospitality(amount, dest)
+    @hospitality = Hospitality.where("cost <= '%s' and city = '%s'" , amount, dest)
   end
   
-  def set_activities(amount)
-    @activity = Transportation.where("cost <= ?", amount)
+  def set_activities(amount, dest)
+    @activities = Activities.where("cost <= '%s' and city = '%s'", amount, dest)
   end
 end

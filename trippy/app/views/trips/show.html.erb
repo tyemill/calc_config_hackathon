@@ -10,3 +10,62 @@
     </tr>
   <% end %>
 </table>
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+</style>
+</head>
+<body>
+<table>
+  <tr>
+    <th>Mode</th>
+    <th>Start</th>
+    <th>Destination</th>
+    <th>Cost</th>
+  </tr>
+  <%= @transportation.each do |t| %>
+    <tr>
+      <td><%= t.mode %></td>
+      <td><%= t.start %></td>
+      <td><%= t.dest %></td>
+      <td><%= t.cost %></td>
+    </tr>
+  <% end %>
+</table>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>Country</th>
+  </tr>
+  <%= @hospitality.each do |hotel| %>
+    <tr>
+      <td><%= hotel.name %></td>
+      <td><%= hotel.address %></td>
+      <td><%= hotel.city %></td>
+      <td><%= hotel.country %></td>
+    </tr>
+  <% end %>
+</table>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Duration</th>
+		<th>Cost</th>
+  </tr>
+  <%= @activities.each do |act| %>
+    <tr>
+      <td><%= act.name %></td>
+      <td><%= act.duration %></td>
+      <td><%= act.cost %></td>
+    </tr>
+  <% end %>
+</table>
+</body>
+</html>
