@@ -1,12 +1,16 @@
-<header>
-  <div align="center">
-    <h1>Trippy</h1>
-  </div>
-</header>
+
 
 <body>
-  <div id="main-container" class="container-fluid" align="center">
-    <%= link_to image_tag("seattle.jpg", alt: "Rails logo") %>
+  <header>
+    <div align="center">
+      <h1>Trippy</h1>
+    </div>
+  </header>
+
+<main class = "containier-fluid" align="center">
+
+  <!-- <div id="main-container" class="container-fluid" align="center"> -->
+    <!-- <%= link_to image_tag("seattle.jpg", alt: "Rails logo") %> -->
 
     <div class="row">
       <%= form_tag(trips_path, method: "get") do %>
@@ -48,7 +52,8 @@
 
     </div>
 
-  </div>
+  <!-- </div> -->
 
+</main>
 
 </body>

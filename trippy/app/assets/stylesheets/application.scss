@@ -16,21 +16,41 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-$font-stack:    Helvetica, sans-serif;
-
-// header {
-//   font: 100% Helvetica, sans-serif;
-//   color: #333;
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700);
+// $font-stack:    Helvetica, sans-serif;
+// $roboto-slab: 'Roboto Slab', serif;
+// $open-sans: 'Open Sans', sans-serif;
+// // header {
+// //   font: 100% Helvetica, sans-serif;
+// //   color: #333;
+// // }
+// main {
+//   font: 180% $open-sans;
+//   padding: 25px;
+//   margin-left: 250px;
+//   margin-right: 250px;
+//   background-color: rgba(251, 226, 201, 0.67);
 // }
-.header {
-  font: 200% Helvetica;
-}
-
-body {
-  background-image: url(/assets/images/seattle.jpg);
-  font: 180% $font-stack;
-}
-
-.row {
-  margin-top: 20px;
-}
+//
+// .container-fluid {
+//   margin-left: 20px;
+//   margin-right: 20px;
+//   margin-top: 20px;
+//   margin-bottom: 20px;
+//   background-color: rgba(63, 191, 191, 0.1);
+//
+// }
+//
+// h1 {
+//   font: 600% $roboto-slab;
+// }
+//
+// body {
+//   background-image: url("seattle.jpg");
+//   background-size: cover;
+//   // font: 180% $open-sans;
+// }
+//
+// .row {
+//   margin-top: 20px;
+// }
