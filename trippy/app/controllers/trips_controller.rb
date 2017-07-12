@@ -21,14 +21,11 @@ class TripsController < ApplicationController
     set_transportation(amount, dest, start)
     unless @transportation_cheap.nil? || @transportation_cheap[0].nil?
       amount = amount - @transportation_cheap[0].cost
-      puts "amount 1 = #{amount}"
     end
     set_hospitality(amount, dest)
     unless @hospilatity_cheap.nil? || @hospitality_cheap[0].nil?
       amount = amount - @hospitality_cheap[0].cost
-      puts "amount 2 = #{amount}"
     end
-    puts "amount final = #{amount}"
     set_activities_cheap(amount, dest)
   end
 
