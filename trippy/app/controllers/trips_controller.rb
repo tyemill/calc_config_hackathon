@@ -5,18 +5,20 @@ class TripsController < ApplicationController
   def show
     amount = params[:budget].to_i
     dest = params[:city]
+    start = params[:start]
+    duration = params[:duration]
     
-    set_cheap(amount, dest)
+    set_cheap(amount, dest, start)
     amount = params[:budget].to_i
-    set_expensive(amount, dest)
+    set_expensive(amount, dest, start)
     amount = params[:budget].to_i
-    set_random(amount, dest)
+    set_random(amount, dest, start)
   end
 
   private
 
-  def set_cheap(amount, dest)
-    set_transportation(amount, dest)
+  def set_cheap(amount, dest, start)
+    set_transportation(amount, dest, start)
     unless @transportion_cheap.nil? || @transportion_cheap[0].nil? 
       amount = amount - @transportation_cheap[0].cost 
     end
@@ -27,8 +29,8 @@ class TripsController < ApplicationController
     set_activities_cheap(amount, dest)
   end 
 
-  def set_expensive(amount, dest)
-    set_transportation_high(amount, dest)
+  def set_expensive(amount, dest, start)
+    set_transportation_high(amount, dest, start)
     unless @transportation_high.nil? || @transportation_high[0].nil? 
       amount = amount - @transportation_high[0].cost
     end
@@ -39,8 +41,8 @@ class TripsController < ApplicationController
     set_activities_high(amount, dest)
   end 
   
-  def set_random(amount, dest)
-    set_transportation_rand(amount, dest)
+  def set_random(amount, dest, start)
+    set_transportation_rand(amount, dest, start)
     unless @transportation_rand.nil? || @transportation_rand[0].nil? 
       amount = amount - @transportation_rand[0].cost
     end
@@ -52,8 +54,8 @@ class TripsController < ApplicationController
   end 
 
 
-  def set_transportation(amount, dest)
-    @transportation_cheap = Transportation.limit(1).order("cost").where("cost <= '%s' and dest = '%s'" , amount, dest)
+  def set_transportation(amount, dest, start)
+    @transportation_cheap = Transportation.limit(1).order("cost").where("cost <= '%s' and dest = '%s' and start = '%s'" , amount, dest, start)
   end
   
   def set_hospitality(amount, dest)
@@ -65,8 +67,8 @@ class TripsController < ApplicationController
     @activities_cheap = Activities.limit(2 * params[:duration].to_i).order("cost").where("cost <= '%s' and city = '%s'", amount, dest)
   end
   
-  def set_transportation_high(amount, dest)
-    @transportation_high = Transportation.limit(1).order("cost DESC").where("cost <= '%s' and dest = '%s'" , amount, dest)
+  def set_transportation_high(amount, dest, start)
+    @transportation_high = Transportation.limit(1).order("cost DESC").where("cost <= '%s' and dest = '%s' and start = '%s'" , amount, dest, start)
   end
   
   def set_hospitality_high(amount, dest)
@@ -78,8 +80,8 @@ class TripsController < ApplicationController
     @activities_high = Activities.limit(2 * params[:duration].to_i).order("cost DESC").where("cost <= '%s' and city = '%s'", amount, dest)
   end
 
-  def set_transportation_rand(amount, dest)
-    @transportation_rand = Transportation.limit(1).where("cost <= '%s' and dest = '%s'" , amount, dest)
+  def set_transportation_rand(amount, dest, start)
+    @transportation_rand = Transportation.limit(1).where("cost <= '%s' and dest = '%s' and start = '%s'" , amount, dest, start)
   end
   
   def set_hospitality_rand(amount, dest)
@@ -88,7 +90,13 @@ class TripsController < ApplicationController
   end
   
   def set_activities(amount, dest)
-    @activities_rand = Activities.limit(2 * params[:duration].to_i).where("cost <= '%s' and city = '%s'", amount, dest)
+    total = 0
+    @activities_rand = Array.new
+    Activities.limit(2 * params[:duration].to_i).where("cost <= '%s' and city = '%s'", amount, dest).each do |act| 
+      break if ((total += act.cost) > amount)
+      total += act.cost
+      @activities_rand << act
+    end
   end
   
 end
