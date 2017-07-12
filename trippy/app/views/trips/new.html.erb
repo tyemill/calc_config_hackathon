@@ -1,18 +1,45 @@
-<h1>Trippy</h1>
-<%= link_to image_tag("seattle.jpg", alt: "Rails logo") %>
+<div align="center">
+  <h1>Trippy</h1>
+</div>
 
-<%= form_tag(trips_path, method: "get") do %>
-  <%= label_tag("From") %>
-  <%= text_field_tag(:start) %>
+<body>
+  <div id="main-container" class="container-fluid" align="center">
+    <%= link_to image_tag("seattle.jpg", alt: "Rails logo") %>
 
-  <%= label_tag("Destination") %>
-  <%= text_field_tag(:city) %>
+    <div class="row">
+      <%= form_tag(trips_path, method: "get") do %>
 
-  <%= label_tag("Budget") %>
-  <%= text_field_tag(:budget) %>
+      <div class="row">
+          <div class="col-xs-12">
+            <%= label_tag("From") %>
+            <%= text_field_tag(:start) %>
+          </div>
 
-  <%= label_tag("Duration") %>
-  <%= text_field_tag(:duration) %>
+        <div class="col-xs-12">
+          <%= label_tag("Destination") %>
+          <%= text_field_tag(:city) %>
+        </div>
 
-  <%= button_tag "Submit" %>
-<% end %>
+        <div class="col-xs-12">
+          <%= label_tag("Budget") %>
+          <%= text_field_tag(:budget) %>
+        </div>
+
+        <div class="col-xs-12">
+          <%= label_tag("Duration") %>
+          <%= text_field_tag(:duration) %>
+        </div>
+
+        <div class="col-xs-12">
+          <%= button_tag "Submit" %>
+          <% end %>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+</body>

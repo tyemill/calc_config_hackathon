@@ -14,5 +14,19 @@
  *= require_self
  */
 
-@import "bootstrap-sprockets"
-@import "bootstrap"
+@import "bootstrap-sprockets";
+@import "bootstrap";
+$font-stack:    Helvetica, sans-serif;
+
+// body {
+//   font: 100% Helvetica, sans-serif;
+//   color: #333;
+// }
+
+body {
+  font: 180% $font-stack;
+}
+
+.row {
+  padding-top: 10px
+}
