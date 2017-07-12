@@ -17,11 +17,11 @@ class TripsController < ApplicationController
 
   def set_cheap(amount, dest)
     set_transportation(amount, dest)
-    unless @transportion_cheap.nil?
+    unless @transportion_cheap.nil? || @transportion_cheap[0].nil? 
       amount = amount - @transportation_cheap[0].cost 
     end
     set_hospitality(amount, dest)
-    unless @hospilatity_cheap.nil? 
+    unless @hospilatity_cheap.nil? || @hospitality_cheap[0].nil? 
       amount = amount - @hospitality_cheap[0].cos
     end
     set_activities_cheap(amount, dest)
@@ -29,11 +29,11 @@ class TripsController < ApplicationController
 
   def set_expensive(amount, dest)
     set_transportation_high(amount, dest)
-    unless @transportation_high.nil? 
+    unless @transportation_high.nil? || @transportation_high[0].nil? 
       amount = amount - @transportation_high[0].cost
     end
     set_hospitality_high(amount, dest)
-    unless @hospitality.nil? 
+    unless @hospitality_high.nil? || @hospitality_high[0].nil? 
       amount = amount - @hospitality_high[0].cost
     end
     set_activities_high(amount, dest)
@@ -41,11 +41,11 @@ class TripsController < ApplicationController
   
   def set_random(amount, dest)
     set_transportation_rand(amount, dest)
-    unless @transportation_rand.nil? 
+    unless @transportation_rand.nil? || @transportation_rand[0].nil? 
       amount = amount - @transportation_rand[0].cost
     end
     set_hospitality_rand(amount, dest)
-    unless @hospitality_rand.nil? 
+    unless @hospitality_rand.nil? || @hospitality_rand[0].nil? 
       amount = amount - @hospitality_rand[0].cost
     end
     set_activities(amount, dest)
