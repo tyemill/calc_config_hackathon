@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20170711022234) do
   create_table "transportations", force: :cascade do |t|
     t.string   "mode"
     t.string   "start"
-    t.string   "end"
+    t.string   "dest"
     t.integer  "duration"
     t.integer  "cost"
     t.datetime "created_at"

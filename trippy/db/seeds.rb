@@ -9,40 +9,40 @@
 def make_stuff
 Transportation.create!([
   # Seattle tickets
-  {mode: "Flight", start: "Seattle", end: "Seattle", duration: 1, cost: 60},
-  {mode: "Train", start: "Seattle", end: "Seattle", duration: 4, cost: 30},
-  {mode: "Flight", start: "Seattle", end: "Los Angeles", duration: 2, cost: 190},
-  {mode: "Train", start: "Seattle", end: "Los Angeles", duration: 5, cost: 60},
-  {mode: "Flight", start: "Seattle", end: "New York", duration: 5, cost: 260},
-  {mode: "Flight", start: "Seattle", end: "New York", duration: 7, cost: 110},
-  {mode: "Train", start: "Seattle", end: "New York", duration: 9, cost: 100},
+  {mode: "Flight", start: "Seattle", dest: "Seattle", duration: 1, cost: 60},
+  {mode: "Train", start: "Seattle", dest: "Seattle", duration: 4, cost: 30},
+  {mode: "Flight", start: "Seattle", dest: "Los Angeles", duration: 2, cost: 190},
+  {mode: "Train", start: "Seattle", dest: "Los Angeles", duration: 5, cost: 60},
+  {mode: "Flight", start: "Seattle", dest: "New York", duration: 5, cost: 260},
+  {mode: "Flight", start: "Seattle", dest: "New York", duration: 7, cost: 110},
+  {mode: "Train", start: "Seattle", dest: "New York", duration: 9, cost: 100},
 
   # Seattle tickets
-  {mode: "Flight", start: "Seattle", end: "Seattle", duration: 1, cost: 60},
-  {mode: "Train", start: "Seattle", end: "Seattle", duration: 4, cost: 30},
-  {mode: "Flight", start: "Seattle", end: "Los Angeles", duration: 1, cost: 200},
-  {mode: "Train", start: "Seattle", end: "Los Angeles", duration: 3, cost: 70},
-  {mode: "Flight", start: "Seattle", end: "New York", duration: 6, cost: 280},
-  {mode: "Flight", start: "Seattle", end: "New York", duration: 10, cost: 130},
-  {mode: "Train", start: "Seattle", end: "New York", duration: 9, cost: 150},
+  {mode: "Flight", start: "Seattle", dest: "Seattle", duration: 1, cost: 60},
+  {mode: "Train", start: "Seattle", dest: "Seattle", duration: 4, cost: 30},
+  {mode: "Flight", start: "Seattle", dest: "Los Angeles", duration: 1, cost: 200},
+  {mode: "Train", start: "Seattle", dest: "Los Angeles", duration: 3, cost: 70},
+  {mode: "Flight", start: "Seattle", dest: "New York", duration: 6, cost: 280},
+  {mode: "Flight", start: "Seattle", dest: "New York", duration: 10, cost: 130},
+  {mode: "Train", start: "Seattle", dest: "New York", duration: 9, cost: 150},
 
   # Los Angeles tickets
-  {mode: "Flight", start: "Los Angeles", end: "Seattle", duration: 2, cost: 180},
-  {mode: "Train", start: "Los Angeles", end: "Seattle", duration: 5, cost: 65},
-  {mode: "Flight", start: "Los Angeles", end: "Seattle", duration: 1, cost: 200},
-  {mode: "Train", start: "Los Angeles", end: "Seattle", duration: 3, cost: 70},
-  {mode: "Flight", start: "Los Angeles", end: "New York", duration: 6, cost: 250},
-  {mode: "Flight", start: "Los Angeles", end: "New York", duration: 9, cost: 170},
-  {mode: "Train", start: "Los Angeles", end: "New York", duration: 9, cost: 160},
+  {mode: "Flight", start: "Los Angeles", dest: "Seattle", duration: 2, cost: 180},
+  {mode: "Train", start: "Los Angeles", dest: "Seattle", duration: 5, cost: 65},
+  {mode: "Flight", start: "Los Angeles", dest: "Seattle", duration: 1, cost: 200},
+  {mode: "Train", start: "Los Angeles", dest: "Seattle", duration: 3, cost: 70},
+  {mode: "Flight", start: "Los Angeles", dest: "New York", duration: 6, cost: 250},
+  {mode: "Flight", start: "Los Angeles", dest: "New York", duration: 9, cost: 170},
+  {mode: "Train", start: "Los Angeles", dest: "New York", duration: 9, cost: 160},
 
   # New York tickets
-  {mode: "Flight", start: "New York", end: "Seattle", duration: 2, cost: 180},
-  {mode: "Train", start: "New York", end: "Seattle", duration: 5, cost: 65},
-  {mode: "Flight", start: "New York", end: "Seattle", duration: 1, cost: 200},
-  {mode: "Train", start: "New York", end: "Seattle", duration: 3, cost: 70},
-  {mode: "Flight", start: "New York", end: "Los Angeles", duration: 6, cost: 280},
-  {mode: "Flight", start: "New York", end: "Los Angeles", duration: 9, cost: 190},
-  {mode: "Train", start: "New York", end: "Los Angeles", duration: 9, cost: 190},
+  {mode: "Flight", start: "New York", dest: "Seattle", duration: 2, cost: 180},
+  {mode: "Train", start: "New York", dest: "Seattle", duration: 5, cost: 65},
+  {mode: "Flight", start: "New York", dest: "Seattle", duration: 1, cost: 200},
+  {mode: "Train", start: "New York", dest: "Seattle", duration: 3, cost: 70},
+  {mode: "Flight", start: "New York", dest: "Los Angeles", duration: 6, cost: 280},
+  {mode: "Flight", start: "New York", dest: "Los Angeles", duration: 9, cost: 190},
+  {mode: "Train", start: "New York", dest: "Los Angeles", duration: 9, cost: 190},
   ])
 
 Activities.create!([
