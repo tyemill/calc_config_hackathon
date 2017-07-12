@@ -28,7 +28,7 @@ table, th, td {
     <th>Destination</th>
     <th>Cost</th>
   </tr>
-  <%= @transportation.each do |t| %>
+  <% @transportation.each do |t| %>
     <tr>
       <td><%= t.mode %></td>
       <td><%= t.start %></td>
@@ -44,7 +44,7 @@ table, th, td {
     <th>City</th>
     <th>Country</th>
   </tr>
-  <%= @hospitality.each do |hotel| %>
+  <% @hospitality.each do |hotel| %>
     <tr>
       <td><%= hotel.name %></td>
       <td><%= hotel.address %></td>
@@ -59,7 +59,7 @@ table, th, td {
     <th>Duration</th>
 		<th>Cost</th>
   </tr>
-  <%= @activities.each do |act| %>
+  <% @activities.each do |act| %>
     <tr>
       <td><%= act.name %></td>
       <td><%= act.duration %></td>
