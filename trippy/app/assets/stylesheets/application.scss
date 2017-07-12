@@ -17,9 +17,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700);
-// $font-stack:    Helvetica, sans-serif;
-// $roboto-slab: 'Roboto Slab', serif;
-// $open-sans: 'Open Sans', sans-serif;
+ $font-stack:    Helvetica, sans-serif;
+ $roboto-slab: 'Roboto Slab', serif;
+ $open-sans: 'Open Sans', sans-serif;
 // // header {
 // //   font: 100% Helvetica, sans-serif;
 // //   color: #333;
@@ -41,9 +41,17 @@
 //
 // }
 //
-// h1 {
-//   font: 600% $roboto-slab;
-// }
+h1 {
+  font: 600% $roboto-slab;
+}
+
+h2 {
+  font: 300% $roboto-slab;
+}
+
+h3 {
+  font: 150% $roboto-slab;
+}
 //
 // body {
 //   background-image: url("seattle.jpg");
